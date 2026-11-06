@@ -1,0 +1,9 @@
+node_modules/
+web/node_modules/
+web/dist/
+dist/
+runs/
+uploads/
+*.bundle
+*.log
+.DS_Store
