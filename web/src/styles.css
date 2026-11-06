@@ -1,0 +1,143 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #0f1115;
+  color: #e6e6e6;
+}
+.app {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 24px;
+}
+header {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+header h1 { font-size: 20px; margin: 0; }
+.version { color: #888; font-size: 12px; }
+section {
+  background: #171a21;
+  border: 1px solid #262a33;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+section h2 { font-size: 14px; margin: 0 0 12px; color: #9aa4b2; text-transform: uppercase; letter-spacing: 0.04em; }
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+  margin-bottom: 10px;
+  color: #c7ccd4;
+}
+.checkbox-row { flex-direction: row; align-items: center; gap: 8px; }
+input[type="text"], input[type="password"] {
+  background: #0f1115;
+  border: 1px solid #333945;
+  border-radius: 6px;
+  color: #e6e6e6;
+  padding: 8px 10px;
+  font-size: 13px;
+}
+.package-list-header, .package-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 32px;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.package-list-header span { font-size: 11px; color: #777; text-transform: uppercase; }
+.row-remove {
+  background: transparent;
+  border: 1px solid #333945;
+  border-radius: 6px;
+  color: #c7ccd4;
+  cursor: pointer;
+}
+.manifest-paste {
+  margin-bottom: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #262a33;
+}
+.manifest-paste textarea {
+  width: 100%;
+  background: #0f1115;
+  border: 1px solid #333945;
+  border-radius: 6px;
+  color: #e6e6e6;
+  padding: 10px;
+  font-size: 12px;
+  font-family: ui-monospace, monospace;
+  resize: vertical;
+}
+.manifest-paste-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 8px;
+}
+.radio-row {
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 0;
+}
+.manifest-paste-actions button {
+  background: #262a33;
+  color: #e6e6e6;
+  border: 1px solid #333945;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 12px;
+  cursor: pointer;
+}
+.manifest-paste-actions button:disabled { opacity: 0.5; cursor: default; }
+.add-row {
+  background: transparent;
+  border: 1px dashed #444b59;
+  border-radius: 6px;
+  color: #9aa4b2;
+  padding: 8px;
+  width: 100%;
+  cursor: pointer;
+}
+button[type="submit"] {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  width: 100%;
+}
+button[type="submit"]:disabled { opacity: 0.6; cursor: default; }
+.hint { font-size: 12px; color: #888; margin: 8px 0 0; }
+.error { color: #f87171; font-size: 13px; }
+.log-panel {
+  background: #0a0b0e;
+  border: 1px solid #262a33;
+  border-radius: 8px;
+  padding: 12px;
+  max-height: 240px;
+  overflow-y: auto;
+  font-family: ui-monospace, monospace;
+  font-size: 12px;
+  margin-bottom: 16px;
+}
+.log-line .txt { white-space: pre-wrap; overflow-wrap: anywhere; }
+.results {
+  background: #122117;
+  border: 1px solid #1f3d2a;
+  border-radius: 8px;
+  padding: 16px;
+}
+.download-link {
+  display: inline-block;
+  margin-top: 8px;
+  color: #4ade80;
+}
