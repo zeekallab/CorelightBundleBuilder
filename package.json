@@ -1,0 +1,59 @@
+{
+  "name": "corelight-bundle-builder",
+  "version": "1.0.1",
+  "private": true,
+  "type": "module",
+  "description": "Build custom Corelight sensor bundles from git package URLs and optionally upload them to Fleet Manager.",
+  "author": "Corelight",
+  "main": "electron/main.cjs",
+  "scripts": {
+    "server": "node server/index.js",
+    "web:dev": "cd web && npm run dev",
+    "web:build": "cd web && npm run build",
+    "app:dev": "npm run web:build && node scripts/app.js",
+    "app:build": "npm run web:build && electron-builder",
+    "postinstall": "cd web && npm install"
+  },
+  "build": {
+    "appId": "io.corelight.bundlebuilder",
+    "productName": "Corelight Bundle Builder",
+    "files": [
+      "**/*",
+      "!web/src/**",
+      "!web/node_modules/**",
+      "!server/node_modules/**",
+      "!node_modules/electron/**",
+      "!node_modules/electron-builder/**",
+      "!node_modules/.bin/**",
+      "!dist/**",
+      "!.github/**",
+      "!*.md"
+    ],
+    "asar": false,
+    "afterPack": "scripts/afterPack.cjs",
+    "electronLanguages": ["en", "en-US"],
+    "removePackageScripts": true,
+    "removePackageKeywords": true,
+    "mac": {
+      "target": ["dmg"],
+      "category": "public.app-category.developer-tools"
+    },
+    "win": {
+      "target": ["nsis"]
+    },
+    "linux": {
+      "target": ["AppImage"]
+    }
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "isomorphic-git": "^1.27.1",
+    "tar": "^7.4.3",
+    "multer": "^1.4.5-lts.1",
+    "undici": "^6.19.8"
+  },
+  "devDependencies": {
+    "electron": "^33.4.11",
+    "electron-builder": "^25.0.5"
+  }
+}
