@@ -1,0 +1,10 @@
+node_modules/
+.prod-node-modules-staging/
+web/node_modules/
+web/dist/
+dist/
+runs/
+uploads/
+*.bundle
+*.log
+.DS_Store
